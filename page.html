@@ -1,0 +1,28 @@
+<html>
+	<head></head>
+	<body>
+		<header>
+			<title>http://info.cern.ch</title>
+		</header>
+		MY TEXT HERE
+		<h1>http://info.cern.ch - home of the first website</h1>
+		<p>From here you can:</p>
+		<ul>
+			<li><a href="http://info.cern.ch/hypertext/WWW/TheProject.html">Browse the first website</a></li>
+			<li><a href="http://line-mode.cern.ch/www/hypertext/WWW/TheProject.html">Browse the first website using the line-mode browser simulator</a></li>
+			<li><a href="http://home.web.cern.ch/topics/birth-web">Learn about the birth of the web</a></li>
+			<li><a href="http://home.web.cern.ch/about">Learn about CERN, the physics laboratory where the web was born</a></li>
+		</ul>
+		<p>This page has been visited <span id="visit">x</span> times</p>
+		<script>
+			fetch('http://localhost:3000/visits')
+				.then((res) => res.text())
+				.then((data) => {
+					const counter = document.getElementById('visit');
+
+					counter.textContent = data;
+				});
+		</script>
+	</body>
+</html>
+
